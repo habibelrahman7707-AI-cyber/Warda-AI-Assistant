@@ -1,1 +1,8 @@
-# Warda-AI-Assistant
+A comprehensive, AI-driven personal assistant built with Python, integrating local application control, advanced multi-agent orchestration, and highly resilient API networking.
+
+Architected a PyQt5-based Desktop Interface: Developed a fully interactive, lightweight desktop application that serves as the primary front-end for continuous user-agent communication, featuring seamless voice note handling and text-based interactions.
+Engineered a Resilient LLM Proxy Server: Built a custom Flask-based local proxy (localhost:3003/v1) to intercept and route all outbound LLM requests (e.g., to Groq/OpenAI).
+Automated API Key Rotation (Rate-Limit Bypass): Designed a robust error-handling and key-rotation algorithm within the proxy server that automatically switches out API keys upon encountering HTTP 429 (Too Many Requests) errors, effectively doubling the rate limits and ensuring uninterrupted agent availability.
+Integrated CrewAI for Multi-Agent Orchestration: Utilized the CrewAI framework to divide complex user tasks among specialized sub-agents (e.g., WhatsApp summarization, software installation, file management), allowing the assistant to reason through and execute multi-step workflows autonomously.
+Automated System-Level Operations: Implemented direct OS integrations using native commands and tools (like Windows winget) to allow the AI to control the computer, automatically install software, manage local file systems, and execute complex backend scripts without human intervention.
+Secure Configuration Management: Built a decoupled configuration system storing sensitive credentials (api_keys.json) outside the source code, adhering to strict cybersecurity and GitHub best practices.
